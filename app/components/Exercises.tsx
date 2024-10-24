@@ -1,5 +1,3 @@
-import Link from "next/link";
-import Btn from "./UI/Btn";
 import { baseImageUrl, exercises } from "../utils/utils";
 import Image from "next/image";
 

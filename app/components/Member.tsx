@@ -21,7 +21,7 @@ export default function Member() {
 				<p className="text-[#D0D5DC]/50 leading-8">
 					Step into a world where the beat of determination meets the rhythm of wellness. Imagine a future
 					where every heartbeat is a step towards a healthier, more vibrant life. Welcome to Bold Fitness NG,
-					where we've set our sights on a grand mission: to ignite a fitness revolution that dances through
+					where we&apos;ve set our sights on a grand mission: to ignite a fitness revolution that dances through
 					the heart of Nigeria, inspiring a nation to embrace the vitality of life itself.
 				</p>
 

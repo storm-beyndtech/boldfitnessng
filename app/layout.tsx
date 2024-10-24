@@ -1,5 +1,6 @@
 import { Poppins, Montserrat, Michroma } from "next/font/google";
 import "./globals.css";
+import { Metadata } from "next";
 
 const poppins = Poppins({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -21,6 +22,35 @@ const michroma = Michroma({
 	variable: "--font-michroma",
 	display: "swap",
 });
+
+export const metadata: Metadata = {
+	title: "Bold Fitness NG",
+	description: "Step into a world where the beat of determination meets the rhythm of wellness.",
+	// Open Graph Meta Tags for Social Media Previews
+	openGraph: {
+		title: "Bold Fitness NG",
+		description: "Step into a world where the beat of determination meets the rhythm of wellness.",
+		url: "https://boldfitnessng.net", // Your website URL
+		siteName: "Bold Fitness NG",
+		images: [
+			{
+				url: "/images/fitness-cover.jpg", // Path to the image (ensure this image is accessible)
+				width: 1200,
+				height: 630,
+				alt: "Bold Fitness NG Cover Image",
+			},
+		],
+		locale: "en_US",
+		type: "website",
+	},
+	// Twitter Card Meta Tags for better Twitter previews
+	twitter: {
+		card: "summary_large_image",
+		title: "Bold Fitness NG",
+		description: "Step into a world where the beat of determination meets the rhythm of wellness.",
+		images: ["/images/fitness-cover.jpg"], // Same or different image URL from the Open Graph one
+	},
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (

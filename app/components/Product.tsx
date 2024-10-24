@@ -25,8 +25,8 @@ export default function Product() {
 					<ArmSticker className="absolute top-8 right-15 max-sm:top-5" />
 				</h2>
 				<p className="text-[#D0D5DC]/50 leading-8">
-					Unlock your full potential with premium gym products and supplements. Whether it's top-tier gear or
-					performance-enhancing nutrition, we've got everything you need to crush your goals, recover faster,
+					Unlock your full potential with premium gym products and supplements. Whether it&apos;s top-tier gear or
+					performance-enhancing nutrition, we&apos;ve got everything you need to crush your goals, recover faster,
 					and feel unstoppable. Elevate your grind—every rep, every day.
 				</p>
 

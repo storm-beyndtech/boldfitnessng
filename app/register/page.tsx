@@ -32,7 +32,9 @@ const MembershipRegistration = () => {
 		setError(null);
 		const { id, value } = e.target;
 		setFormData((prev) => ({ ...prev, [id]: value }));
-	};
+  };
+  
+  console.log(setLoading)
 
 	const validateForm = (): string => {
 		if (formData.plan === "none") return "Please select a membership plan";
@@ -58,7 +60,7 @@ const MembershipRegistration = () => {
 		}
 	};
 
-	const handlePaymentSuccess = async (reference: string) => {
+  const handlePaymentSuccess = async (reference: string) => {
 		try {
 			// Here you would send both the user data and payment reference to your backend
 			const response = await fetch("/api/register", {

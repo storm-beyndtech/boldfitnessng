@@ -1,5 +1,5 @@
 // components/checkout/OrderSummary.tsx
-import { UserData, PaymentInitiateResponse, Plan } from "@/types/types";
+import { UserData, Plan } from "@/types/types";
 
 
 export const OrderSummary: React.FC<{

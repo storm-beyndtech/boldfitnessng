@@ -16,7 +16,6 @@ interface CheckoutProps {
 
 export const Checkout: React.FC<CheckoutProps> = ({
   userData,
-  onPaymentSuccess,
   onPaymentError,
 }) => {
   const [isProcessing, setIsProcessing] = useState(false);

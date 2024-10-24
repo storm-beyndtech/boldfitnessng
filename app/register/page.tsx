@@ -79,7 +79,8 @@ const MembershipRegistration = () => {
 			}
 
 			// Handle successful registration (e.g., redirect to success page)
-		} catch (error) {
+    } catch (error) {
+      console.log(error)
 			setError("Registration failed. Please try again.");
 			setShowCheckout(false);
 		}

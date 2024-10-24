@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 		siteName: "Bold Fitness NG",
 		images: [
 			{
-				url: "/images/fitness-cover.jpg", // Path to the image (ensure this image is accessible)
+				url: "https://firebasestorage.googleapis.com/v0/b/boldfitness-ed634.appspot.com/o/meta-seo.png?alt=media",
 				width: 1200,
 				height: 630,
 				alt: "Bold Fitness NG Cover Image",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Bold Fitness NG",
 		description: "Step into a world where the beat of determination meets the rhythm of wellness.",
-		images: ["/images/fitness-cover.jpg"], // Same or different image URL from the Open Graph one
+		images: ["https://firebasestorage.googleapis.com/v0/b/boldfitness-ed634.appspot.com/o/meta-seo.png?alt=media"],
 	},
 };
 

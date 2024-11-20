@@ -18,7 +18,7 @@ export default function Affiliates() {
 					</h1>
 				</div>
 
-				<img className="" src={GymGoons} alt="GymGoons" />
+				<img className="w-48 h-auto" src={GymGoons} alt="GymGoons" />
 			</div>
 		</section>
 	);

@@ -3,6 +3,7 @@ import Email from "../assets/email.svg?react";
 import IG from "../assets/ig.svg?react";
 import { Link } from "react-router-dom";
 import { baseImageUrl } from "../util/utils";
+import map from "../assets/Google-Maps.png";
 
 export interface MenuGroup {
 	name: string;
@@ -25,7 +26,7 @@ const otherLinks = [
 
 export default function Footer() {
 	return (
-		<section className="bg-transparent/40 text-white">
+		<section className="bg-[#000000] text-white">
 			<div className="flex w-full flex-col gap-10 pt-20 max-ctn">
 				<div className="w-full flex grow flex-row flex-wrap gap-5 justify-between lg:flex-nowrap lg:items-start leading-[27.2px] max-sm:gap-y-12">
 					{/*Company Logo */}
@@ -34,13 +35,23 @@ export default function Footer() {
 							<img
 								src={`${baseImageUrl}bold-fitness-logo.svg?alt=media`}
 								alt="logo"
-								className="w-auto h-18 -ml-2"
+								className="w-auto h-14 -ml-2"
 							/>
 						</Link>
 
-						<p className="text-[#D0D5DC]/50 text-sm hover:text-brandBlue2 leading-8">
+						<p className="text-[#D0D5DC]/50 text-sm leading-6">
 							Bold Fitness NG, KM 4 Poly Nekede Rd, 460114, Owerri, Imo, Owerri
 						</p>
+
+						<div className="flex items-center gap-4 mt-3">
+							<img src={map} alt="Map" className="w-10 h-10 object-cover rounded" />
+							<a
+								href="https://www.google.com/maps/@5.4441576,7.0352376,19z?entry=ttu&g_ep=EgoyMDI1MDMxMi4wIKXMDSoASAFQAw%3D%3D"
+								className="text-[#D0D5DC]/50 text-sm font-medium hover:text-brandBlue2 leading-6"
+							>
+								Navigate <br /> Location
+							</a>
+						</div>
 					</div>
 
 					{/*About  Links */}
@@ -48,7 +59,11 @@ export default function Footer() {
 						<h2 className="font-montserrat font-medium text-base mb-5">About Us</h2>
 
 						{aboutLinks.map((link) => (
-							<Link to={link.href} key={link.name} className="text-[#D0D5DC]/50 text-sm hover:text-brandBlue2 leading-8">
+							<Link
+								to={link.href}
+								key={link.name}
+								className="text-[#D0D5DC]/50 text-sm hover:text-brandBlue2 leading-8"
+							>
 								{link.name}
 							</Link>
 						))}
@@ -59,7 +74,11 @@ export default function Footer() {
 						<h2 className="font-montserrat font-medium text-base mb-5">Useful Links</h2>
 
 						{otherLinks.map((link) => (
-							<Link to={link.href} key={link.name} className="text-[#D0D5DC]/50 text-sm hover:text-brandBlue2 leading-8">
+							<Link
+								to={link.href}
+								key={link.name}
+								className="text-[#D0D5DC]/50 text-sm hover:text-brandBlue2 leading-8"
+							>
 								{link.name}
 							</Link>
 						))}

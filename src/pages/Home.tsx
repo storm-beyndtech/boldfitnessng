@@ -11,19 +11,19 @@ import Programs from "../components/Programs";
 import Vision from "../components/Vision";
 
 export default function Home() {
-  return (
-    <div className="bg-bg relative">
-      <Navbar />
-      <Hero />
-      <Programs />
-      <Member />
-      <OurTeam />
-      <Exercises />
-      <Pricing />
-      <Vision />
-      <Affiliates />
-      <Product />
-      <Footer />
-    </div>
-  )
+	return (
+		<div className="bg-blue-50 dark:bg-bg relative">
+			<Navbar />
+			<Hero />
+			<Programs />
+			<Member />
+			<OurTeam />
+			<Exercises />
+			<Pricing />
+			<Vision />
+			<Affiliates />
+			<Product />
+			<Footer />
+		</div>
+	);
 }

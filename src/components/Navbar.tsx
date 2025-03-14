@@ -3,6 +3,7 @@ import { CgMenuRight, CgClose } from "react-icons/cg";
 import Btn from "./UI/Btn";
 import logo from "../assets/bold-fitness-logo.svg";
 import { Link } from "react-router-dom";
+import DarkModeSwitcher from "./layout/DarkModeSwitcher";
 
 const links = ["program", "pricing", "affiliates", "products"];
 
@@ -12,12 +13,10 @@ const Navbar = () => {
 	const handleNavbg = () => {
 		const nav = document.getElementById("navBar");
 		if (nav) {
-			if (window.scrollY >= 150) {
-				nav.style.position = "fixed";
-				nav.style.backdropFilter = "blur(15px)";
-				nav.style.background = "#0a0a10b9";
+			if (window.scrollY >= 100) {
+				nav.style.backdropFilter = "blur(10px)";
+				nav.style.background = "#000208eb";
 			} else {
-				nav.style.position = "absolute";
 				nav.style.backdropFilter = "none";
 				nav.style.background = "none";
 			}
@@ -29,7 +28,7 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<nav className="py-5 absolute w-full top-0 left-0 z-40" id="navBar">
+		<nav className="py-5 fixed w-full top-0 left-0 z-40" id="navBar">
 			<div className="max-ctn">
 				<div className="flex items-center justify-between">
 					<div className="w-full flex items-center justify-between">
@@ -48,8 +47,13 @@ const Navbar = () => {
 								<Link to="/contact" className="navLink">
 									Contact Us
 								</Link>
+
+								<div className="my-auto">
+									<DarkModeSwitcher />
+								</div>
+
 								<Link to="/register">
-									<Btn type="primary" label="Become A Member" btnAction="button" />
+									<Btn type="primary" label="Become A Member" btnAction="button" nav />
 								</Link>
 							</div>
 						</div>
@@ -57,7 +61,7 @@ const Navbar = () => {
 
 					<div className="md:hidden flex gap-3">
 						<Link to="/register">
-							<Btn type="primary" label="Register" btnAction="button" />
+							<Btn type="primary" label="Register" btnAction="button" nav />
 						</Link>
 						<button onClick={() => setIsOpen(!isOpen)} className="menuCtrOutline">
 							{!isOpen ? <CgMenuRight className="block h-6 w-6" /> : <CgClose className="block h-6 w-6" />}

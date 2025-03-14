@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import { baseImageUrl } from "../util/utils";
 import Btn from "./UI/Btn";
+import team1 from "../assets/team-member-1.svg";
+import team2 from "../assets/team-member-2.svg";
+import team3 from "../assets/team-member-3.svg";
 
 export default function OurTeam() {
 	const slideSectionWrapperRef = useRef<HTMLDivElement>(null);
@@ -90,12 +92,10 @@ export default function OurTeam() {
 		}
 	}, [canScrollRight, getScrollAmount]);
 
-
-
 	return (
-		<section className="py-20">
-			<div className="max-ctn flex flex-col max-sm:flex-col-reverse items-center gap-10 pb-20 max-sm:pb-10">
-				<h2 className="text-5xl font-poppins sm:text-[150px] font-semibold text-center text-white/5 select-none">
+		<section className="my-20 bg-black dark:bg-transparent">
+			<div className="bg-blue-50 dark:bg-transparent flex flex-col max-sm:flex-col-reverse items-center gap-5 pb-10 max-sm:pb-10">
+				<h2 className="text-5xl font-poppins sm:text-[150px] font-semibold text-center text-[#16161c] select-none">
 					Our Team
 				</h2>
 
@@ -108,18 +108,16 @@ export default function OurTeam() {
 
 			{/* Wrapper with scroll */}
 			<div
-        className={`w-full flex sm:gap-10 overflow-x-scroll no-scrollbar my-5 sm:pl-7
-          scroll-smooth transition-all duration-300 ease-in-out`}
+				className={`w-full max-w-fit mx-auto flex sm:gap-10 overflow-x-scroll no-scrollbar py-30 sm:pl-7`}
 				ref={slideSectionWrapperRef}
 			>
-				{[1, 2, 1, 2].map((_, i) => (
-					<div key={i} className="relative w-full max-w-[483px] flex-shrink-0 px-3 group">
+				{[team1, team2, team3].map((_, i) => (
+					<div key={i} className="relative w-full max-w-[460px] flex-shrink-0 px-3 group">
 						<img
 							className="w-full h-auto object-cover transition-transform duration-300
                 group-hover:scale-[1.02]"
-							src={`${baseImageUrl}team-member-${_}.svg?alt=media`}
+							src={_}
 							alt={`BoldFitnessNG Coach ${i + 1}`}
-							loading="lazy"
 						/>
 					</div>
 				))}

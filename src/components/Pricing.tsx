@@ -3,11 +3,11 @@ import { TbSquareRoundedCheck } from "react-icons/tb";
 import Btn from "./UI/Btn";
 
 const keyPoints = [
-	"Over 3 Free Training Sessions Monthly",
-	"Access to Advanced Training Facilities",
-	"Top-tier Fitness Supplements & Products",
+	"3 Free Sessions Monthly",
+	"Advanced Training Facilities",
+	"Supplements & Products",
 	"Access to Personal Training",
-	"Supportive Network of Like-Minds",
+	"Network of Like-Minds",
 	"Friendly Environment",
 ];
 
@@ -112,27 +112,27 @@ export default function Pricing() {
 				].map(({ price, period }, i) => (
 					<div
 						key={i}
-						className="w-[100%] max-w-[320px] px-7.5 py-12 rounded-[30px] bg-transparent/5 
-              flex flex-col justify-between gap-7.5 flex-shrink-0 border-[2px] border-gray-900 
-              hover:border-brandBlue1 transition-colors duration-200 ease-in-out"
+						className={`w-[100%] max-w-[300px] px-7 py-12 rounded-[20px]
+              flex flex-col justify-between gap-7.5 flex-shrink-0 border-[1px] ${
+								i === 1 ? "border-brandBlue1" : "border-gray-900/20"
+							} 
+              hover:border-brandBlue1 transition-colors duration-200 ease-in-out`}
 					>
 						<div className="flex justify-between items-center">
-							<div className="w-fit grid place-content-center rounded-[40%] bg-gray-900/60 py-4 px-3">
-								<h2 className="text-3xl font-semibold font-sans">
-									<span className="text-brandBlue3 text-[0.35em] font-medium">₦</span>
-									<span className="text-[#D0D5DC] mx-1">{price}</span>
-									<span className="text-brandBlue3 text-[0.4em] font-medium">K</span>
-								</h2>
-							</div>
-							<h2 className="text-[#D0D5DC] font-semibold text-lg text-right">
-								{period} <span className="text-brandBlue1 block mt-1">Plan</span>
+							<h2 className="text-5xl text-bodydark1/80 dark:text-white font-semibold font-sans">
+								₦{price}
+								<span className="text-brandBlue3 text-[0.5em] font-medium">K</span>
+							</h2>
+
+							<h2 className="text-desc font-semibold text-lg text-right">
+								{period} <span className="text-brandBlue1 block">Plan</span>
 							</h2>
 						</div>
 						<div className="w-full flex flex-col gap-7 pt-15">
 							{keyPoints.map((point, i) => (
 								<div key={i} className="flex items-center justify-start gap-5">
 									<TbSquareRoundedCheck className="text-lg text-brandBlue1 flex-shrink-0" />
-									<p className="text-xs font-sans font-normal text-[#D0D5DC]/50">{point}</p>
+									<p className="text-base font-sans font-normal text-desc">{point}</p>
 								</div>
 							))}
 						</div>

@@ -9,9 +9,19 @@ type dataProp = {
 	direction?: "left" | "right";
 	onClick?: () => void;
 	enabled?: boolean;
+	nav?: boolean;
 };
 
-export default function Btn({ type, label, disabled, btnAction, direction, onClick, enabled }: dataProp) {
+export default function Btn({
+	type,
+	label,
+	disabled,
+	btnAction,
+	direction,
+	onClick,
+	enabled,
+	nav,
+}: dataProp) {
 	switch (type) {
 		case "primary":
 			return (
@@ -19,15 +29,16 @@ export default function Btn({ type, label, disabled, btnAction, direction, onCli
 					aria-label={label}
 					disabled={disabled}
 					type={btnAction}
-					className={`text-white text-xs font-montserrat font-semibold rounded-xl px-5 py-2.5 text-center inline-flex items-center justify-center whitespace-nowrap border border-brandBlue3 hover:border-brandBlue2 ${
+					className={`${
+						!nav ? "text-black" : "text-white"
+					} dark:text-white text-xs font-montserrat font-semibold rounded-xl px-5 py-2.5 text-center inline-flex items-center justify-center whitespace-nowrap border border-brandBlue3 hover:border-brandBlue2 ${
 						disabled ? "opacity-50 cursor-not-allowed" : ""
 					}`}
 				>
 					{disabled ? <CgSpinner className="w-4 h-4 text-white spin" /> : label}
 				</button>
-      );
-    
-    
+			);
+
 		case "auth":
 			return (
 				<button
@@ -46,11 +57,9 @@ export default function Btn({ type, label, disabled, btnAction, direction, onCli
 			return (
 				<div
 					onClick={enabled ? onClick : undefined}
-					className={`w-12 h-12 grid place-content-center rounded-xl cursor-pointer 
-              bg-brandBlue3/5 text-xl transition-colors duration-200
-              ${
-								enabled ? "text-brandBlue1 hover:bg-brandBlue3/10" : "text-brandBlue1/20 cursor-not-allowed"
-							}`}
+					className={`w-12 h-12 grid place-content-center rounded-full border-2 border-brandBlue3 cursor-pointer 
+              bg-brandBlue1/5 text-lg dark:text-brandBlue1 text-black hover:bg-brandBlue3/10
+              ${enabled ? "" : "opacity-50 cursor-not-allowed border-0"}`}
 				>
 					{direction === "left" ? <FaArrowLeftLong /> : <FaArrowRightLong />}
 				</div>

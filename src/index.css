@@ -1,16 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --font-poppins: 	"Poppins", sans-serif;
-  --font-montserrat: 	"Montserrat", sans-serif;
-  --font-michroma: 	"Michroma", sans-serif;
+	--font-poppins: "Poppins", sans-serif;
+	--font-montserrat: "Montserrat", sans-serif;
+	--font-michroma: "Michroma", sans-serif;
 }
-
 
 * {
 	margin: 0;
@@ -33,14 +31,13 @@ section {
 h1,
 h2 {
 	line-height: normal !important;
-  font-family: "Montserrat", sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 
 .slideLoad {
 	transition: all ease-in-out 0.5s;
 	animation: toNfro 4s linear 0s infinite;
 }
-
 
 @keyframes toNfro {
 	0% {
@@ -76,15 +73,15 @@ h2 {
 		width: 100%;
 		max-width: 1240px;
 		margin: 0 auto;
-    padding: 0 16px 0 16px;
+		padding: 0 16px 0 16px;
 	}
 
 	.input {
-		@apply shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ;
+		@apply shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
 	}
 
 	.inputLabel {
-		@apply block mb-1.5 text-xs font-medium text-gray-400  ;
+		@apply block mb-1.5 text-xs font-medium text-gray-400;
 	}
 
 	.editUserInput {
@@ -123,9 +120,13 @@ h2 {
 		@apply inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white;
 	}
 
-  .heroTitle2 {
-    @apply font-michroma text-xl sm:text-5xl md:text-6xl lg:text-7xl sm:title-stroke-2 tracking-[0.2em] leading-none text-white;
-  }
+	.heroTitle {
+		@apply font-montserrat font-extrabold text-4xl md:text-5xl lg:text-6xl leading-none text-white mb-5 sm:mb-10;
+	}
+
+	.heroTitle2 {
+		@apply sm:font-michroma max-sm:font-montserrat max-sm:font-bold text-4xl md:text-6xl lg:text-7xl sm:title-stroke-2 max-sm:tracking-wide tracking-[0.2em] leading-none text-white;
+	}
 
 	.pad {
 		@apply sm:px-16 px-5 sm:py-24 py-12;

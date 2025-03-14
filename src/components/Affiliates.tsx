@@ -10,11 +10,11 @@ export default function Affiliates() {
 		>
 			<div className="max-ctn flex flex-col items-center py-20">
 				<div className="flex flex-col max-sm:gap-5 mx-auto">
-					<h1 className="text-5xl font-poppins sm:text-[150px] font-extrabold text-center text-[#8C62FF]">
+					<h1 className="text-5xl font-poppins sm:text-[150px] font-extrabold text-center text-brandBlue3">
 						MEET OUR
 					</h1>
-					<h1 className="text-5xl font-poppins sm:text-[130px] font-black text-center text-brandBlue2 -mt-10">
-						AFFILIATES
+					<h1 className="text-5xl font-poppins sm:text-[140px] font-black text-center text-brandBlue2 -mt-10">
+						PARTNERS
 					</h1>
 				</div>
 

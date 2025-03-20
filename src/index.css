@@ -34,6 +34,10 @@ h2 {
 	font-family: "Montserrat", sans-serif;
 }
 
+.customBlur {
+	backdrop-filter: blur(10px);
+}
+
 .slideLoad {
 	transition: all ease-in-out 0.5s;
 	animation: toNfro 4s linear 0s infinite;

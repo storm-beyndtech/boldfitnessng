@@ -3,7 +3,7 @@ import { baseImageUrl, exercises } from "../util/utils";
 export default function Exercises() {
 	return (
 		<section
-			className="max-ctn flex flex-col-reverse md:grid md:grid-cols-2 md:items-center gap-20 xl:gap-32 pt-0 sm:pt-[150px] "
+			className="max-ctn flex flex-col-reverse md:grid md:grid-cols-2 md:items-center gap-20 xl:gap-32 pt-5 sm:pt-[100px] "
 			id="exercises"
 		>
 			<img

@@ -93,7 +93,7 @@ export default function OurTeam() {
 	}, [canScrollRight, getScrollAmount]);
 
 	return (
-		<section className="my-20 bg-black dark:bg-transparent">
+		<section className="my-20 mb-0 bg-black dark:bg-transparent">
 			<div className="bg-blue-50 dark:bg-transparent flex flex-col max-sm:flex-col-reverse items-center gap-5 pb-10 max-sm:pb-10">
 				<h2 className="text-5xl font-poppins sm:text-[150px] font-semibold text-center text-[#16161c] select-none">
 					Our Team

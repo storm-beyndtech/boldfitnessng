@@ -3,7 +3,7 @@ import { baseImageUrl, exercises } from "../util/utils";
 export default function Exercises() {
 	return (
 		<section
-			className="max-ctn flex flex-col-reverse md:grid md:grid-cols-2 md:items-center gap-20 xl:gap-32 py-[50px] sm:pt-[150px]"
+			className="max-ctn flex flex-col-reverse md:grid md:grid-cols-2 md:items-center gap-20 xl:gap-32 pt-0 sm:pt-[150px] "
 			id="exercises"
 		>
 			<img
@@ -13,7 +13,7 @@ export default function Exercises() {
 			/>
 			<div className="w-full max-w-[520px] flex flex-col gap-10">
 				<p className="text-desc leading-8">
-					<span className="font-medium text-black dark:text-desc">Exercises:</span> Elevate your fitness and
+					<span className="font-medium text-black dark:text-white">Exercises:</span> Elevate your fitness and
 					well-being through targeted workouts that balance energy level and build lasting strength.
 				</p>
 

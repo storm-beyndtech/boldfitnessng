@@ -6,6 +6,7 @@ import Paystack from "@paystack/inline-js";
 import RegistrationForm from "../../components/RegistrationForm";
 import { sendRequest } from "../../util/sendRequest";
 import { AiOutlineLoading3Quarters, AiOutlineCheckCircle, AiOutlineWarning } from "react-icons/ai";
+import SEO from "../../components/SEO";
 
 const Modal = ({ isOpen, children }: any) => {
 	if (!isOpen) return null;
@@ -57,8 +58,8 @@ const StatusDisplay = ({ status }: { status: "processing" | "uploading" | "succe
 };
 
 const MembershipRegistration = () => {
-  const PaystackPK = import.meta.env.VITE_REACT_APP_PAYSTACK_PK;
-  const url = import.meta.env.VITE_REACT_APP_SERVER_URL;
+	const PaystackPK = import.meta.env.VITE_REACT_APP_PAYSTACK_PK;
+	const url = import.meta.env.VITE_REACT_APP_SERVER_URL;
 	const initialValues = {
 		plan: "none",
 		firstName: "",
@@ -72,10 +73,10 @@ const MembershipRegistration = () => {
 			city: "",
 			state: "none",
 			zipCode: "",
-    },
-    accountType: "member",
-  };
-  
+		},
+		accountType: "member",
+	};
+
 	const [formData, setFormData] = useState(initialValues);
 
 	const [error, setError] = useState<null | string>(null);
@@ -116,16 +117,15 @@ const MembershipRegistration = () => {
 			setError("Please enter a valid plan");
 			setLoading(false);
 			return;
-    }
-    
+		}
 
-    const res = await fetch(`${url}/auth/validate/${formData.email}`);
+		const res = await fetch(`${url}/auth/validate/${formData.email}`);
 
-    if (!res.ok) {
-      setError("User already exist, please try a different email");
+		if (!res.ok) {
+			setError("User already exist, please try a different email");
 			setLoading(false);
 			return;
-    }
+		}
 
 		try {
 			const popup = new Paystack();
@@ -149,8 +149,8 @@ const MembershipRegistration = () => {
 						});
 
 						setModalStatus("success");
-            setTimeout(() => setModalStatus(null), 5000);
-            setFormData(initialValues)
+						setTimeout(() => setModalStatus(null), 5000);
+						setFormData(initialValues);
 					} catch (error) {
 						setModalStatus("error");
 						setTimeout(() => setModalStatus(null), 3000);
@@ -178,51 +178,58 @@ const MembershipRegistration = () => {
 	};
 
 	return (
-		<div className="flex bg-gray-100 max-sm:bg-white">
-			{/* Left: Form Section */}
-			<div className="w-full lg:w-1/2 grid sm:place-content-center px-5 py-10">
-				<div className="w-full max-w-2xl bg-white rounded-2xl sm:p-7.5">
-					<div className="mb-10 flex items-center">
-						<Link to="/" className="h-16 w-16 flex border-r-[0.5px] border-gray-300 mr-2">
-							<img
-								src={`${baseImageUrl}bold-fitness-logo-fav.svg?alt=media`}
-								alt="logo"
-								className="h-full w-auto"
-							/>
-						</Link>
-						<div>
-							<p className="mt-2 text-gray-400 text-xs pl-1">Select Plan & Proceed</p>
-							<h1 className="text-[2rem] font-semibold text-gray-800 font-montserrat">Register</h1>
+		<>
+			<SEO
+				title="Bold Fitness NG | Be Bold. Fit. Unstoppable | Become a member 🏋"
+				description="Step into a world where the beat of determination meets the rhythm of wellness."
+				url="https://boldfitnessng.net"
+			/>
+			<div className="flex bg-gray-100 max-sm:bg-white">
+				{/* Left: Form Section */}
+				<div className="w-full lg:w-1/2 grid sm:place-content-center px-5 py-10">
+					<div className="w-full max-w-2xl bg-white rounded-2xl sm:p-7.5">
+						<div className="mb-10 flex items-center">
+							<Link to="/" className="h-16 w-16 flex border-r-[0.5px] border-gray-300 mr-2">
+								<img
+									src={`${baseImageUrl}bold-fitness-logo-fav.svg?alt=media`}
+									alt="logo"
+									className="h-full w-auto"
+								/>
+							</Link>
+							<div>
+								<p className="mt-2 text-gray-400 text-xs pl-1">Select Plan & Proceed</p>
+								<h1 className="text-[2rem] font-semibold text-gray-800 font-montserrat">Register</h1>
+							</div>
 						</div>
+						<RegistrationForm
+							formData={formData}
+							handleChange={handleChange}
+							handleSubmit={handleSubmit}
+							loading={loading}
+							error={error}
+							plans={PAYMENT_PLANS}
+							setFormData={setFormData}
+						/>
 					</div>
-					<RegistrationForm
-						formData={formData}
-						handleChange={handleChange}
-						handleSubmit={handleSubmit}
-						loading={loading}
-						error={error}
-						plans={PAYMENT_PLANS}
-						setFormData={setFormData}
+				</div>
+
+				{/* Right: Image Section */}
+				<div className="h-screen overflow-y-hidden hidden lg:flex justify-end w-1/2 sticky top-0 right-0">
+					<img
+						src={`${baseImageUrl}auth-bg.svg?alt=media`}
+						alt="Auth right background"
+						className="w-full object-top object-cover"
 					/>
 				</div>
-			</div>
 
-			{/* Right: Image Section */}
-			<div className="h-screen overflow-y-hidden hidden lg:flex justify-end w-1/2 sticky top-0 right-0">
-				<img
-					src={`${baseImageUrl}auth-bg.svg?alt=media`}
-					alt="Auth right background"
-					className="w-full object-top object-cover"
-				/>
+				{/* Status Modal */}
+				<Modal isOpen={modalStatus !== null}>
+					{modalStatus && (
+						<StatusDisplay status={modalStatus as "processing" | "uploading" | "success" | "error"} />
+					)}
+				</Modal>
 			</div>
-
-			{/* Status Modal */}
-			<Modal isOpen={modalStatus !== null}>
-				{modalStatus && (
-					<StatusDisplay status={modalStatus as "processing" | "uploading" | "success" | "error"} />
-				)}
-			</Modal>
-		</div>
+		</>
 	);
 };
 

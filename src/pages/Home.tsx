@@ -8,22 +8,31 @@ import OurTeam from "../components/OurTeam";
 import Pricing from "../components/Pricing";
 import Product from "../components/Product";
 import Programs from "../components/Programs";
+import SEO from "../components/SEO";
 import Vision from "../components/Vision";
 
 export default function Home() {
 	return (
-		<div className="bg-blue-50 dark:bg-bg relative">
-			<Navbar />
-			<Hero />
-			<Programs />
-			<Member />
-			<OurTeam />
-			<Exercises />
-			<Pricing />
-			<Vision />
-			<Affiliates />
-			<Product />
-			<Footer />
-		</div>
+		<>
+			<SEO
+				title="Bold Fitness NG | Be Bold. Fit. Unstoppable 🏋"
+				description="Step into a world where the beat of determination meets the rhythm of wellness."
+				url="https://boldfitnessng.net"
+			/>
+
+			<div className="bg-blue-50 dark:bg-bg relative">
+				<Navbar />
+				<Hero />
+				<Programs />
+				<Member />
+				<OurTeam />
+				<Exercises />
+				<Pricing />
+				<Vision />
+				<Affiliates />
+				<Product />
+				<Footer />
+			</div>
+		</>
 	);
 }

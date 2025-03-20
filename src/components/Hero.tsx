@@ -24,11 +24,11 @@ const Hero = () => {
 				<img src={`${baseImageUrl}floatDesc-1.svg?alt=media`} alt="desc" className="w-full" />
 			</div>
 
-			<div className="w-20 rounded-xl overflow-hidden sm:w-30 absolute bottom-[30%] left-[15%] z-20 backdrop-blur-lg">
+			<div className="w-20 rounded-xl overflow-hidden sm:w-30 absolute bottom-[25%] max-lg:bottom-[18%] left-[10%] z-20 backdrop-blur-lg">
 				<img src={`${baseImageUrl}floatDesc-2.svg?alt=media`} alt="desc" className="w-full" />
 			</div>
 
-			<div className="w-20 rounded-xl overflow-hidden sm:w-30 absolute bottom-[10%] right-[30%] z-20 backdrop-blur-lg">
+			<div className="w-20 rounded-xl overflow-hidden sm:w-30 absolute bottom-[10%] right-[30%] max-lg:right-[20%] z-20 backdrop-blur-lg">
 				<img src={`${baseImageUrl}floatDesc-3.svg?alt=media`} alt="desc" className="w-full" />
 			</div>
 		</div>

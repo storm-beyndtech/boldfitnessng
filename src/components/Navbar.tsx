@@ -29,7 +29,7 @@ const Navbar = () => {
 
 	return (
 		<nav className="py-5 fixed w-full top-0 left-0 z-40" id="navBar">
-			<div className="max-ctn">
+			<div className="max-ctn max-sm:px-2">
 				<div className="flex items-center justify-between">
 					<div className="w-full flex items-center justify-between">
 						<div className="flex-shrink-0">
@@ -60,6 +60,9 @@ const Navbar = () => {
 					</div>
 
 					<div className="md:hidden flex gap-3">
+						<div className="my-auto">
+							<DarkModeSwitcher />
+						</div>
 						<Link to="/register">
 							<Btn type="primary" label="Register" btnAction="button" nav />
 						</Link>

@@ -119,22 +119,22 @@ const MembershipRegistration = () => {
 			return;
 		}
 
-		const res = await fetch(`${url}/auth/validate/${formData.email}`);
-
-		if (!res.ok) {
-			setError("User already exist, please try a different email");
-			setLoading(false);
-			return;
-		}
-
 		try {
+			const res = await fetch(`${url}/auth/validate/${formData.email}`);
+
+			if (!res.ok) {
+				setError("User already exist, please try a different email");
+				setLoading(false);
+				return;
+			}
+
 			const popup = new Paystack();
 			popup.checkout({
 				key: PaystackPK,
 				email: formData.email,
 				amount: plan.amount * 100,
 				phone: formData.phoneNumber,
-				channels: ["card", "bank_transfer"],
+				channels: ["card", "ussd", "qr", "eft", "mobile_money", "bank_transfer"],
 				onSuccess: async ({ reference }) => {
 					try {
 						setModalStatus("processing");
@@ -170,7 +170,6 @@ const MembershipRegistration = () => {
 				},
 			});
 		} catch (error) {
-			console.log(error);
 			setError("Registration failed. Please try again.");
 		} finally {
 			setLoading(false);

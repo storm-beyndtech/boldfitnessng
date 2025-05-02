@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { baseImageUrl, PAYMENT_PLANS } from "../../util/utils";
 import { Link } from "react-router-dom";
 import { validateForm } from "../../util/Validation";
@@ -7,6 +7,7 @@ import RegistrationForm from "../../components/RegistrationForm";
 import { sendRequest } from "../../util/sendRequest";
 import { AiOutlineLoading3Quarters, AiOutlineCheckCircle, AiOutlineWarning } from "react-icons/ai";
 import SEO from "../../components/SEO";
+import { Plan } from "../../types/types";
 
 const Modal = ({ isOpen, children }: any) => {
 	if (!isOpen) return null;
@@ -78,11 +79,36 @@ const MembershipRegistration = () => {
 	};
 
 	const [formData, setFormData] = useState(initialValues);
-
+	const [plans, setPlans] = useState(PAYMENT_PLANS);
 	const [error, setError] = useState<null | string>(null);
 	const [loading, setLoading] = useState(false);
 	const [modalStatus, setModalStatus] = useState<null | string>(null);
 
+	//Fetch Pricing
+	const fetchUtils = async (): Promise<void> => {
+		try {
+			const res = await fetch(`${url}/utils`);
+			const data = await res.json();
+
+			if (res.ok && data.utils && data.utils[0] && data.utils[0].plans) {
+				const retrievedPlans = data.utils[0].plans.map((plan: Plan) => ({
+					...plan,
+					features: Array.isArray(plan.features) ? plan.features : [],
+				}));
+				setPlans(retrievedPlans);
+			} else {
+				console.warn(data.message || "Failed to fetch plans");
+			}
+		} catch (error) {
+			console.error("Error fetching plans:", error instanceof Error ? error.message : String(error));
+		}
+	};
+
+	useEffect(() => {
+		fetchUtils();
+	}, []);
+
+	// Handle input change
 	const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
 		setError(null);
 		const { id, value } = e.target;
@@ -112,7 +138,7 @@ const MembershipRegistration = () => {
 			return;
 		}
 
-		const plan = PAYMENT_PLANS.find((_) => _.id === formData.plan);
+		const plan = plans.find((plan) => plan.name === formData.plan);
 		if (!plan) {
 			setError("Please enter a valid plan");
 			setLoading(false);
@@ -132,7 +158,7 @@ const MembershipRegistration = () => {
 			popup.checkout({
 				key: PaystackPK,
 				email: formData.email,
-				amount: plan.amount * 100,
+				amount: plan.price * 100,
 				phone: formData.phoneNumber,
 				channels: ["card", "ussd", "qr", "eft", "mobile_money", "bank_transfer"],
 				onSuccess: async ({ reference }) => {
@@ -206,7 +232,7 @@ const MembershipRegistration = () => {
 							handleSubmit={handleSubmit}
 							loading={loading}
 							error={error}
-							plans={PAYMENT_PLANS}
+							plans={plans}
 							setFormData={setFormData}
 						/>
 					</div>

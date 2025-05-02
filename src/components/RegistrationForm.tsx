@@ -13,8 +13,8 @@ const RegistrationForm = ({ formData, handleChange, handleSubmit, loading, error
       <select id="plan" value={formData.plan} onChange={handleChange} className="input">
         <option value="none">Select a Plan</option>
         {plans.map((plan:any) => (
-          <option key={plan.id} value={plan.id}>
-            {plan.name} - ₦{plan.amount.toLocaleString('en-US')}
+          <option key={plan._id} value={plan.name}>
+            {plan.name} - ₦{plan.price.toLocaleString('en-US')}
           </option>
         ))}
       </select>

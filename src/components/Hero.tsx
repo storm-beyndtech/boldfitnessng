@@ -10,8 +10,7 @@ const Hero = () => {
 			/>
 			<div className="max-ctn relative z-10 text-center px-4 sm:px-6 lg:px-8 pt-30">
 				<h1 className="heroTitle">
-					<span className="font-semibold">Be</span> BOLD<span className="text-brandBlue1 font-black">.</span>{" "}
-					FIT
+					<span className="font-bold">Be</span> BOLD<span className="text-brandBlue1 font-black">.</span> FIT
 					<span className="text-brandBlue1 font-black">.</span>
 				</h1>
 
@@ -24,7 +23,7 @@ const Hero = () => {
 				<img src={`${baseImageUrl}floatDesc-1.svg?alt=media`} alt="desc" className="w-full" />
 			</div>
 
-			<div className="w-20 rounded-xl overflow-hidden sm:w-30 absolute bottom-[25%] max-lg:bottom-[18%] left-[10%] z-20 backdrop-blur-lg">
+			<div className="w-20 rounded-xl overflow-hidden sm:w-30 absolute bottom-[50%] max-lg:bottom-[18%] left-[20%] z-20 backdrop-blur-lg">
 				<img src={`${baseImageUrl}floatDesc-2.svg?alt=media`} alt="desc" className="w-full" />
 			</div>
 

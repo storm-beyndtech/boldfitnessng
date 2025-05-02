@@ -24,11 +24,11 @@ export interface UserData {
 }
 
 export interface Plan {
-	id: string;
+	_id?: string;
 	name: string;
-	amount: number;
+	price: number;
 	features: string[];
-	interval: 30 | 120 | 365;
+	duration: number;
 }
 
 export interface PaymentInitiateResponse {

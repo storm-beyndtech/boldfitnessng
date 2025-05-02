@@ -95,6 +95,14 @@ h2 {
 	.editUserLabel {
 		@apply block mb-1.5 text-xs font-medium text-gray-400 dark:text-white;
 	}
+
+	.editPlanInput {
+		@apply shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:bg-transparent dark:text-white dark:border-gray-800 dark:focus:ring-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+	}
+
+	.editPlanLabel {
+		@apply block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400;
+	}
 }
 
 @layer utilities {
@@ -125,11 +133,11 @@ h2 {
 	}
 
 	.heroTitle {
-		@apply font-montserrat font-extrabold text-4xl md:text-5xl lg:text-6xl leading-none text-white mb-5 sm:mb-10;
+		@apply font-montserrat font-extrabold text-4xl lg:text-5xl leading-none text-white mb-5 sm:mb-10;
 	}
 
 	.heroTitle2 {
-		@apply sm:font-michroma max-sm:font-montserrat max-sm:font-bold text-4xl md:text-6xl lg:text-7xl sm:title-stroke-2 max-sm:tracking-wide tracking-[0.2em] leading-none text-white;
+		@apply sm:font-michroma max-sm:font-montserrat max-sm:font-bold text-4xl md:text-5xl sm:title-stroke-2 max-sm:tracking-wide tracking-[0.2em] leading-none text-white;
 	}
 
 	.pad {

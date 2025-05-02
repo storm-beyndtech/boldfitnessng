@@ -15,10 +15,9 @@ const Login = () => {
 	});
 	const [error, setError] = useState<string | null>(null);
 	const [loading, setLoading] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const { login } = contextData();
-  const navigate = useNavigate()
-
+	const [showPassword, setShowPassword] = useState(false);
+	const { login } = contextData();
+	const navigate = useNavigate();
 
 	// Function to toggle password visibility
 	const togglePasswordVisibility = () => {
@@ -37,15 +36,14 @@ const Login = () => {
 		setLoading(true);
 
 		try {
-      const res = await sendRequest("/auth/login", "POST", {
-        email: formData.email,
-        password: formData.password,
-      });
-      login(res)
-      navigate("/admin")
-		} catch (error) {
-			console.log(error);
-			setError("Something went wrong, Please try again.");
+			const res = await sendRequest("/auth/login", "POST", {
+				email: formData.email,
+				password: formData.password,
+			});
+			login(res);
+			navigate("/admin");
+		} catch (error:any) {
+			setError(error.message);
 		} finally {
 			setLoading(false);
 		}
@@ -79,8 +77,8 @@ const Login = () => {
 								id="email"
 								value={formData.email}
 								onChange={handleChange}
-                className="input"
-                placeholder="name@example.com"
+								className="input"
+								placeholder="name@example.com"
 								type="email"
 								required
 							/>
@@ -108,16 +106,16 @@ const Login = () => {
 
 						{error && <Alert type="danger" message={error} />}
 
-            <Btn type="auth" label="Login" disabled={loading} btnAction="submit"/>
+						<Btn type="auth" label="Login" disabled={loading} btnAction="submit" />
 
-						<div className="flex gap-2 mb-6">
+						{/* <div className="flex gap-2 mb-6">
 							<p className="text-sm font-semibold">
 								Forgot Password?{" "}
 								<a href="#" className="text-blue-600">
 									Reset
 								</a>
 							</p>
-						</div>
+						</div> */}
 					</form>
 				</div>
 			</div>

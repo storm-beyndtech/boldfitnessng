@@ -144,9 +144,9 @@ export const exercises = [
 // constants/plans.ts
 export const PAYMENT_PLANS: Plan[] = [
   {
-    id: 'monthly',
-    name: 'Monthly Plan',
-    amount: 19000,
+    _id: 'monthly',
+    name: 'Monthly',
+    price: 19000,
     features: [
       "Over 3 Free Training Sessions Monthly",
       "Access to Advanced Training Facilities",
@@ -155,12 +155,12 @@ export const PAYMENT_PLANS: Plan[] = [
       "Supportive Network of Like-Minds",
       "Friendly Environment",
     ],
-    interval: 30
+    duration: 30
   },
   {
-    id: 'quarterly',
-    name: 'Quarterly Plan',
-    amount: 51000,
+    _id: 'quarterly',
+    name: 'Quarterly',
+    price: 51000,
     features: [
       "Over 3 Free Training Sessions Monthly",
       "Access to Advanced Training Facilities",
@@ -169,12 +169,12 @@ export const PAYMENT_PLANS: Plan[] = [
       "Supportive Network of Like-Minds",
       "Friendly Environment",
     ],
-    interval: 120,
+    duration: 120,
   },
   {
-    id: 'annually',
-    name: 'Annual Plan',
-    amount: 183000,
+    _id: 'annually',
+    name: 'Annual',
+    price: 183000,
     features: [
       "Over 3 Free Training Sessions Monthly",
       "Access to Advanced Training Facilities",
@@ -183,7 +183,7 @@ export const PAYMENT_PLANS: Plan[] = [
       "Supportive Network of Like-Minds",
       "Friendly Environment",
     ],
-    interval: 365
+    duration: 365
   }
 ];
 

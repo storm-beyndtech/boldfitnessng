@@ -38,7 +38,7 @@ export default function Support() {
 	};
 
 	return (
-		<section className="py-20 bg-gray-50 dark:bg-[#01020c]" id="support">
+		<section className="py-30 bg-gray-50 dark:bg-[#01020c]" id="support">
 			<div className="max-ctn">
 				{/* Main Content */}
 				<div className="grid lg:grid-cols-2 gap-16 items-start">

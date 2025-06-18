@@ -175,7 +175,7 @@ export default function Pricing() {
 			<div className="max-w-full md:max-w-[1400px] mx-auto px-4 relative">
 				{/* Wrapper with scroll */}
 				<div
-					className="w-full flex gap-5 sm:gap-10 overflow-x-auto
+					className="w-full flex justify-center gap-5 sm:gap-10 overflow-x-auto
             no-scrollbar scroll-smooth my-5 max-sm:pl-4"
 					ref={slideSectionWrapperRef}
 				>

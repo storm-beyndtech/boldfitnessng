@@ -6,7 +6,7 @@ import { baseImageUrl } from "../util/utils";
 export default function Member() {
 	return (
 		<section
-			className="max-ctn flex flex-col md:grid md:grid-cols-2 md:items-center gap-20 xl:gap-32 py-[100px] sm:pb-10"
+			className="max-ctn flex flex-col md:grid md:grid-cols-2 md:items-center gap-20 xl:gap-32 py-[100px]"
 			id="become-a-member"
 		>
 			<img

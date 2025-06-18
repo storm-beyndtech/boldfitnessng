@@ -20,7 +20,7 @@ export default function ContactUs() {
 
 		try {
 			setLoading(true);
-			const res = await fetch(`${url}/contact`, {
+			const res = await fetch(`${url}/utils/contact`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ fullName, email, message }),

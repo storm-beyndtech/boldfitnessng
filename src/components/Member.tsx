@@ -6,9 +6,15 @@ import { baseImageUrl } from "../util/utils";
 export default function Member() {
 	return (
 		<section
-			className="max-ctn flex flex-col-reverse md:grid md:grid-cols-2 md:items-center gap-20 xl:gap-32 py-[100px] sm:pb-10"
+			className="max-ctn flex flex-col md:grid md:grid-cols-2 md:items-center gap-20 xl:gap-32 py-[100px] sm:pb-10"
 			id="become-a-member"
 		>
+			<img
+				className="max-w-[630px] w-full rounded-[30px] overflow-hidden"
+				src={`${baseImageUrl}cable-crunch.svg?alt=media`}
+				alt="Cable Crunch"
+      />
+      
 			<div className="w-full max-w-[500px] flex flex-col gap-9">
 				<h2 className="text-3xl sm:text-5xl font-semibold text-black dark:text-white relative">
 					<span className="block">Become</span>{" "}
@@ -28,11 +34,6 @@ export default function Member() {
 					<Btn type="primary" label="Become A Member" />
 				</Link>
 			</div>
-			<img
-				className="max-w-[630px] w-full rounded-[30px] overflow-hidden"
-				src={`${baseImageUrl}cable-crunch.svg?alt=media`}
-				alt="Cable Crunch"
-			/>
 		</section>
 	);
 }

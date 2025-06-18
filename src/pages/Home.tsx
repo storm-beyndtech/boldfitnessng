@@ -4,11 +4,11 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Member from "../components/Member";
 import Navbar from "../components/Navbar";
-import OurTeam from "../components/OurTeam";
 import Pricing from "../components/Pricing";
 import Product from "../components/Product";
 import Programs from "../components/Programs";
 import SEO from "../components/SEO";
+import Support from "../components/Support";
 import Vision from "../components/Vision";
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
 				<Hero />
 				<Programs />
 				<Member />
-				<OurTeam />
+				<Support />
 				<Exercises />
 				<Pricing />
 				<Vision />

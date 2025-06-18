@@ -99,7 +99,7 @@ export default function Programs() {
 				{programs.map((program, i) => (
 					<div
 						key={i}
-						className="w-[450px] max-sm:w-[400px] p-7.5 rounded-[20px] bg-[#e8f3ff]/50 dark:bg-[#01020c] flex flex-col justify-between gap-7.5 flex-shrink-0 border-[2px] border-[#000936]/5 hover:border-brandBlue1"
+						className="w-[450px] max-sm:w-[400px] p-7.5 rounded-[20px] bg-[#fafdff] dark:bg-[#01020c] flex flex-col justify-between gap-7.5 flex-shrink-0 border-[2px] border-[#000936]/5 hover:border-brandBlue1"
 					>
 						<div className="flex justify-between">
 							<div className="grid">

@@ -183,7 +183,9 @@ export default function Pricing() {
 						<div
 							key={i}
 							className={`w-[300px] flex-shrink-0 px-7 py-12 rounded-[20px]
-                flex flex-col gap-7 border-[1px] ${i === 1 ? "border-brandBlue1" : "border-gray-900/20"} 
+                flex flex-col gap-7 border-[1px] ${
+									i === 1 ? "border-brandBlue1" : "border-gray-900/10 dark:border-gray-400/10"
+								} 
                 hover:border-brandBlue1 transition-colors duration-200 ease-in-out
                 ${loading ? "opacity-70" : ""}`}
 						>

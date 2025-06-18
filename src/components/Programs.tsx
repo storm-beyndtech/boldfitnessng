@@ -73,7 +73,7 @@ export default function Programs() {
 	};
 
 	return (
-		<section className="py-20" id="program">
+		<section className="py-20 bg-white dark:bg-transparent" id="program">
 			<div className="max-ctn flex items-end justify-between pb-15">
 				<h2 className="text-3xl sm:text-5xl font-semibold text-black dark:text-white relative">
 					<span className="block">Explore</span>{" "}

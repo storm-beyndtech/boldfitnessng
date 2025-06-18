@@ -20,7 +20,7 @@ export default function Home() {
 				url="https://boldfitnessng.net"
 			/>
 
-			<div className="bg-blue-50 dark:bg-bg relative">
+			<div className="bg-[#f9fcff] dark:bg-bg relative">
 				<Navbar />
 				<Hero />
 				<Programs />

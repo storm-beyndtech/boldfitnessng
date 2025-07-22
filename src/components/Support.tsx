@@ -48,10 +48,10 @@ export default function Support() {
 						<div className="mb-16">
 							<p className="text-brandBlue1 font-medium text-sm uppercase tracking-wider mb-3">Need Help?</p>
 							<h2 className="text-4xl sm:text-5xl font-bold text-black dark:text-white mb-4">
-								We're Here <br /> to<span className="text-brandBlue1">Support</span> You
+								We're Here <br /> to <span className="text-brandBlue1">Support</span> You
 							</h2>
-            </div>
-            
+						</div>
+
 						{/* Contact Methods */}
 						<div className="flex flex-wrap justify-between gap-6">
 							<div className="flex flex-wrap justify-center gap-3 bg-white dark:bg-[#0a0b14] p-4 lg:pr-10 rounded-2xl border border-gray-200 dark:border-[#1a1b23]">

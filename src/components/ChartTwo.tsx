@@ -113,7 +113,7 @@ const ChartTwo: React.FC = () => {
 	console.log(setState.length);
 
 	return (
-		<div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
+		<div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark/60 dark:bg-boxdark xl:col-span-4">
 			<div className="mb-15 justify-between gap-4 sm:flex">
 				<div>
 					<h4 className="text-black dark:text-white">Profit this week</h4>

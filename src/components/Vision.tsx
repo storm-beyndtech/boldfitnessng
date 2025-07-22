@@ -10,7 +10,7 @@ export default function Vision() {
 			id="vision"
 		>
 			<div className="w-full max-w-[500px] flex flex-col gap-9">
-				<h2 className="text-3xl sm:text-5xl font-semibold dark:text-white text-black relative">
+				<h2 className="text-3xl sm:text-5xl font-bold dark:text-white text-black relative">
 					<span className="block">Mission</span>{" "}
 					<span className="block">
 						<span className="dark:text-brandBlue1">& Vision </span>

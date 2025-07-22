@@ -15,7 +15,7 @@ export default function Product() {
 				alt="Products and Supplements"
 			/>
 			<div className="w-full max-w-[500px] flex flex-col gap-9">
-				<h2 className="text-3xl sm:text-5xl font-semibold dark:text-white text-black relative">
+				<h2 className="text-3xl sm:text-5xl font-bold dark:text-white text-black relative">
 					<span className="block darktext-brandBlue1">Gym</span>
 					<span className="block my-2">Products &</span>
 					<span className="darktext-brandBlue1 block">Supplements</span>

@@ -6,7 +6,7 @@ const Hero = () => {
 			<img
 				src={`${baseImageUrl}heroBg.svg?alt=media`}
 				alt="Hero background"
-				className="w-full h-full absolute top-0 left-0 object-top object-cover"
+				className="w-full h-full absolute top-0 left-0 object-top object-cover filter brightness-90"
 			/>
 			<div className="max-ctn relative z-10 text-center px-4 sm:px-6 lg:px-8 pt-30">
 				<h1 className="heroTitle">

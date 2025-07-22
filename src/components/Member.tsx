@@ -13,10 +13,10 @@ export default function Member() {
 				className="max-w-[630px] w-full rounded-[30px] overflow-hidden"
 				src={`${baseImageUrl}cable-crunch.svg?alt=media`}
 				alt="Cable Crunch"
-      />
-      
+			/>
+
 			<div className="w-full max-w-[500px] flex flex-col gap-9">
-				<h2 className="text-3xl sm:text-5xl font-semibold text-black dark:text-white relative">
+				<h2 className="text-3xl sm:text-5xl font-bold text-black dark:text-white relative">
 					<span className="block">Become</span>{" "}
 					<span className="block">
 						A <span className="dark:text-brandBlue1 text-black"> Member </span>

@@ -144,9 +144,9 @@ export default function Pricing() {
 	};
 
 	return (
-		<section className="py-20 sm:pt-10" id="pricing">
+		<section className="py-20" id="pricing">
 			<div className="max-ctn flex flex-col items-center gap-10 py-20 max-sm:pb-10">
-				<h2 className="text-5xl font-poppins sm:text-[150px] font-semibold text-center text-[#16161C]">
+				<h2 className="text-5xl sm:text-[140px] font-bold dark:font-semibold text-center text-[#16161C] dark:text-gray-50">
 					Pricing
 				</h2>
 
